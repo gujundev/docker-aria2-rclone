@@ -1,4 +1,16 @@
-# aria2-rclone
+# docker-aria2-rclone
+
+本项目修改自：https://github.com/jialezi/aria2-rclone
+主要优化了rclone自动上传的部分，用于小硬盘的VPS始终保持只有1个下载和上传任务，防止硬盘爆炸。
+因此README的大部分内容都和原项目一致，直接引用了。
+修改内容：
+
+- 升级Caddy2，并修改了Caddyfile
+- 修改up.sh，实现rclone上传时保留文件目录结构，并且上传完成后自动启动aria2等待列表中的第一个任务。
+
+以下为原项目的README
+
+-------------------------------------
 aria2下载后使用rclone自动上传到网盘的docker镜像
 
 AMD64/ARM64
